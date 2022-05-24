@@ -1,0 +1,18 @@
+* <2022-05-24 k>
+
+Van sok kaszó által mért kút (18 kút) ebből 4 db kontroll.
+Excellben látszik, amit Zoli küldött. Kézi észlelés, heti egy adat.
+Van hozzá csapadék is. Nedves vagy száraz év, esett vagy nem esett.
+
+Cél az, hogy a vízvisszatartás pozitív hatását számszerűsítsük.
+
+2014 21. hét az első oszlop. Milyen nap?
+
+2021. 40. héttől kezdődik.
+
+** Feladat
+- [ ] Kontroll kutakat idősorként ábrázolni. Négy év adata.
+  2014-től heti mérések, a második munkalapon már feliratozott.
+- [ ] Kitalálni, hogy hogyan nézzük meg.
+- [ ] Kitalálni, hogy milyen elrendezést lehet ráhúzni.
+- [ ] Tölgyes és égeres kontroll meg kell felezni.
