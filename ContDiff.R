@@ -6,3 +6,21 @@ Diff.df <- data.frame(
     Tree = factor(c("A", "A", "O", "O", "A", "A", "A", "O", "A", "A", "O", "A", "A", "A"))
 )
 
+## Calculate list of min & max
+limits.df <- data.frame(Min = numeric(),
+                        Max = numeric())
+for(tti in 1:nrow(Diff.df)) {
+    aktNumCtrl <- Diff.df[tti, "Control"]
+    aktNumTreat <- Diff.df[tti, "Treat"]
+    aktdiff <- gw.xts[, aktNumTreat] - gw.xts[, aktNumCtrl]
+    limits.df[tti, "Min"]  <- min(aktdiff)
+    limits.df[tti, "Max"]  <- max(aktdiff)
+}
+
+tti <- 1 {
+    aktNumCtrl <- Diff.df[tti, "Control"]
+    aktNumTreat <- Diff.df[tti, "Treat"]
+    plot.zoo(gw.xts[, aktNumTreat] - gw.xts[, aktNumCtrl],
+             main = paste("GW",aktNumTreat, "Treat - ", aktNumCtrl, "Ctrl"),
+             lwd = 2, xaxs = "i", ylim = c(-100, 350))
+}
