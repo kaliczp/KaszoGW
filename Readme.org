@@ -11,8 +11,38 @@ Cél az, hogy a vízvisszatartás pozitív hatását számszerűsítsük.
 2021. 40. héttől kezdődik.
 
 ** Feladat
-- [ ] Kontroll kutakat idősorként ábrázolni. Négy év adata.
+- [X] Kontroll kutakat idősorként ábrázolni. Négy év adata.
   2014-től heti mérések, a második munkalapon már feliratozott.
-- [ ] Kitalálni, hogy hogyan nézzük meg.
+- [X] Kitalálni, hogy hogyan nézzük meg.
+- [X] Tölgyes és égeres kontroll meg kell felezni.
 - [ ] Kitalálni, hogy milyen elrendezést lehet ráhúzni.
-- [ ] Tölgyes és égeres kontroll meg kell felezni.
+
+* Differenciás
+Azonos fafajjal azonos talajvízmélységgel rendelkező kontrollt választasz a kontroll időszakban (2014/40. héttől, két év múlváig két vegetációs időszak, két év)
+. Megvan az Excelben, hogy melyiket melyikhez választották.
+
+Utánna különbségeket képzek a kontroll kút és a beavatkozással érintett kút között. Amikor megvan, akkor van egy különbség idősorom. Két kút különbség idősora.
+
+A beavatkozásos időszakban is meg kell csinálni ugyanezt. Ezzel a meteorológiai hatásokat kiejtetted. Mivel nem nagy távolságok, nagyjából ugyan az.
+A vegetáció hatását kiejted, mert ugyan abból az állományból van. A talajvíz hatása is kiejtve, mert ugyan az a mélység.
+
+Úgy lett belőle egy-egy oszlop, hogy vettek belőle egy átlagot.
+
+
+Különbség idősor a kontroll és a különbségidősor a beavatkozásosban. Ott lehet hatással a beavatkozás típusa és a beavatkozás hatása.
+A távolság is.
+
+A különbség idősorokat lehet elemezni a távolsággal.
+
+Van két időszak, nem csak az átlagait, hanem a térbeli idősoroknak az időbeli különbségét hasonítod össze.
+
+Tavak hatása sokkan nagyobb, mint a logveirnek. Teljes időszakra és a vegetációs időszakra.
+
+Különbség idősor, amin nincs beavatkozás, különbség idősor, amin van beavatkozás.
+
+boxplotként a diagramban, ami tulajdonképpen a térbeli és időbeli különbségek átlaga.
+
+Térbeli különbség kontrol vs. kezelés (de akkor még nincs kezelés)
+Időbeli, amikor a térkbeli idősor különbségét vettem, akkor veszem a két eredmény különbségét.
+
+Van róla rajz.
