@@ -17,10 +17,14 @@ for(tti in 1:nrow(Diff.df)) {
     limits.df[tti, "Max"]  <- max(aktdiff)
 }
 
-tti <- 1 {
+for(tti in 1:nrow(Diff.df)) {
+    fname <- paste0("Diff_",aktNumTreat, "Treat_", aktNumCtrl, "Ctrl")
+    pdf(paste0(fname, ".pdf"), width = 297/25.4, height = 210 / 25.4)
     aktNumCtrl <- Diff.df[tti, "Control"]
     aktNumTreat <- Diff.df[tti, "Treat"]
     plot.zoo(gw.xts[, aktNumTreat] - gw.xts[, aktNumCtrl],
              main = paste("GW",aktNumTreat, "Treat - ", aktNumCtrl, "Ctrl"),
-             lwd = 2, xaxs = "i", ylim = c(-100, 350))
+             lwd = 2, xaxs = "i", ylim = c(-100, 350), ylab = "Diff [cm]", xlab = ""
+             )
+    dev.off()
 }
