@@ -46,12 +46,13 @@ Térbeli különbség kontrol vs. kezelés (de akkor még nincs kezelés)
 Időbeli, amikor a térkbeli idősor különbségét vettem, akkor veszem a két eredmény különbségét.
 
 Van róla rajz.
+
 * <2022-06-20 h>
 
 ** Idősor ábrák
-- [ ] Összes kontroll
-- [ ] Összes éger
-- [ ] Összes tölgy
+- [X] Összes kontroll
+- [X] Összes éger
+- [X] Összes tölgy
 
 ** Differencia
 Táblázat alapján, majd küldi.
