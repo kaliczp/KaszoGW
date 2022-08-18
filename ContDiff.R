@@ -29,3 +29,17 @@ for(tti in 1:nrow(Diff.df)) {
     axis(1, as.Date("2016-10-01"), tck =1, col = "gray", lab = F)
     dev.off()
 }
+
+for(tti in 1:nrow(Diff.df)) {
+    fname <- paste0("BoxDiff_",aktNumTreat, "Treat_", aktNumCtrl, "Ctrl")
+    pdf(paste0(fname, ".pdf"), width = 297/25.4, height = 210 / 25.4)
+    aktNumCtrl <- Diff.df[tti, "Control"]
+    aktNumTreat <- Diff.df[tti, "Treat"]
+    Before <- gw.xts['2014-10-01/2016-09-30', aktNumTreat] - gw.xts['2014-10-01/2016-09-30', aktNumCtrl]
+    After <- gw.xts['2016-10-01/2018-09-30', aktNumTreat] - gw.xts['2016-10-01/2018-09-30', aktNumCtrl]
+    boxplot(list(Before = coredata(Before),
+                 After = coredata(After)),
+             main = paste("GW",aktNumTreat, "Treat - ", aktNumCtrl, "Ctrl")
+             )
+    dev.off()
+}
