@@ -39,7 +39,23 @@ for(tti in 1:nrow(Diff.df)) {
     After <- gw.xts['2016-10-01/2018-09-30', aktNumTreat] - gw.xts['2016-10-01/2018-09-30', aktNumCtrl]
     boxplot(list(Before = coredata(Before),
                  After = coredata(After)),
-             main = paste("GW",aktNumTreat, "Treat - ", aktNumCtrl, "Ctrl")
+             main = paste("Teljes GW",aktNumTreat, "Treat - ", aktNumCtrl, "Ctrl")
+             )
+    dev.off()
+}
+
+for(tti in 1:nrow(Diff.df)) {
+    fname <- paste0("VegetBoxDiff_",aktNumTreat, "Treat_", aktNumCtrl, "Ctrl")
+    pdf(paste0(fname, ".pdf"), width = 297/25.4, height = 210 / 25.4)
+    aktNumCtrl <- Diff.df[tti, "Control"]
+    aktNumTreat <- Diff.df[tti, "Treat"]
+    Before <- gw.xts['2015-04-01/2015-09-30', aktNumTreat] - gw.xts['2015-04-01/2015-09-30', aktNumCtrl]
+    Before <- c(Before, gw.xts['2016-04-01/2016-09-30', aktNumTreat] - gw.xts['2016-04-01/2016-09-30', aktNumCtrl])
+    After <- gw.xts['2017-04-01/2017-09-30', aktNumTreat] - gw.xts['2017-04-01/2017-09-30', aktNumCtrl]
+    After <- c(After, gw.xts['2018-04-01/2018-09-30', aktNumTreat] - gw.xts['2018-04-01/2018-09-30', aktNumCtrl])
+    boxplot(list(Before = coredata(Before),
+                 After = coredata(After)),
+             main = paste("Veget GW",aktNumTreat, "Treat - ", aktNumCtrl, "Ctrl")
              )
     dev.off()
 }
