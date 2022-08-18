@@ -26,5 +26,6 @@ for(tti in 1:nrow(Diff.df)) {
              main = paste("GW",aktNumTreat, "Treat - ", aktNumCtrl, "Ctrl"),
              lwd = 2, xaxs = "i", ylim = c(-100, 350), ylab = "Diff [cm]", xlab = ""
              )
+    axis(1, as.Date("2016-10-01"), tck =1, col = "gray", lab = F)
     dev.off()
 }
