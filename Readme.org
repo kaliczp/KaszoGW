@@ -60,3 +60,59 @@ Különbségek, kontroll/kezelés.
 
 Különbségek boxplot ábra.
 Két részben 2016-10-01 előtt és után.
+
+* Kérdések
+Távoli kutak (3&4) hol vannak az áttekintő ábráról. Kívül esnek a területen?
+Jó-e a tábla?
+
+* <2022-08-18 cs>
+Csoportokba sorolt kutak.
+
+- Kontroll
+- Égeres
+- Tölgyes
+
+A számítás nem volt jó, az alapadatok jók voltak. Az Előd rosszból
+vonogatott ki.
+
+Idősorokból kell ábra. A csapadék idősort is rá kell tenni.
+Az elején csinált András havi csapadékokat.
+
+A kiinduló táblázatban van heti csapadékösszeg és
+András megnézni, hogy mi van nálla. Kiss Katival letöltött
+Boreas adatok?
+
+A kút száma lehetne a közös hivatkozási alap.
+Az Erdészettudomány Közlemények cikk alapján megnézni.
+
+Koordináták a monitoring tervben. 3. fejezetben
+Adatok/Kaszozrt/monitoring terv
+
+Olyan plotokat kellene létrehozni
+
+** Ábrák
+*** Áttekintő
+4-es ábra, ahol a kontroll és a többi csoportosan látszik.
+
+*** Szemléltető ábra
+Hasonló az Elődéhez szemléltető ábra. Hogyan lehetnek a különbségek.
+Különböző színnel beszinezni a különbségeket a 2. ábrán.
+
+*** Boxplot
+Táblázatba szedni a boxplot adatait.
+
+*** t-próba
+t-próbával összehasonlítani a két adatsort.
+Van-e szignifikáns különbség
+
+*** Vegetációs időszakra
+Csak a vegetációs időszakra.
+
+Cseke Csabának a dolgozatában bent vannak a leürítések.
+
+Okt1–Szept30 nemzetközi hidro év. Erre kell minden az ábrára!
+
+Vegetációs időszak Április1–Szept30-ig.
+
+*** Táblázat
+Pontszám átlag, szórás, db.
