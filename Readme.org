@@ -116,3 +116,8 @@ Vegetációs időszak Április1–Szept30-ig.
 
 *** Táblázat
 Pontszám átlag, szórás, db.
+
+* <2022-08-20 szo>
+** Boxplothoz ötlet
+Egy objektumba rakni minden adatot.
+Esetleg összehasonlítható, ha nullába transzformálom az alapesetet.
