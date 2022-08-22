@@ -59,3 +59,27 @@ for(tti in 1:nrow(Diff.df)) {
              )
     dev.off()
 }
+
+
+NoShftFull.df <- data.frame(Diff = numeric(),
+                            Mode = character(),
+                            WellC = numeric(),
+                            WellT = numeric()#,
+##                            Code = character()
+                            )
+for(tti in 1:nrow(Diff.df)) {
+    aktNumCtrl <- Diff.df[tti, "Control"]
+    aktNumTreat <- Diff.df[tti, "Treat"]
+    Before <- gw.xts['2014-10-01/2016-09-30', aktNumTreat] - gw.xts['2014-10-01/2016-09-30', aktNumCtrl]
+    After <- gw.xts['2016-10-01/2018-09-30', aktNumTreat] - gw.xts['2016-10-01/2018-09-30', aktNumCtrl]
+    aktData = c(as.vector(coredata(Before)), as.vector(coredata(After)))
+    akt.df <- data.frame(Diff = aktData,
+                         Mode = c(rep("C", nrow(Before)),
+                                  rep("T", nrow(After))),
+                         WellC = aktNumCtrl,
+                         WellT = aktNumTreat)
+    NoShftFull.df <- rbind(NoShftFull.df, akt.df)
+}
+ttcode  <- paste0(NoShftFull.df$Mode, NoShftFull.df$WellC, NoShftFull.df$WellT)
+NoShftFull.df$Code = factor(ttcode, levels = unique(ttcode))
+boxplot(Diff ~ Code, NoShftFull.df)
