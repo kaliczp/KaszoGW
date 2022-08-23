@@ -74,8 +74,8 @@ for(tti in 1:nrow(Diff.df)) {
     After <- gw.xts['2016-10-01/2018-09-30', aktNumTreat] - gw.xts['2016-10-01/2018-09-30', aktNumCtrl]
     aktData = c(as.vector(coredata(Before)), as.vector(coredata(After)))
     akt.df <- data.frame(Diff = aktData,
-                         Mode = c(rep("C", nrow(Before)),
-                                  rep("T", nrow(After))),
+                         Mode = c(rep("B", nrow(Before)),
+                                  rep("A", nrow(After))),
                          WellC = aktNumCtrl,
                          WellT = aktNumTreat)
     NoShftFull.df <- rbind(NoShftFull.df, akt.df)
