@@ -93,6 +93,7 @@ Olyan plotokat kellene létrehozni
 ** Ábrák
 *** Áttekintő
 4-es ábra, ahol a kontroll és a többi csoportosan látszik.
+4 ábra egymás mellett idősorosan.
 
 *** Szemléltető ábra
 Hasonló az Elődéhez szemléltető ábra. Hogyan lehetnek a különbségek.
@@ -121,3 +122,24 @@ Pontszám átlag, szórás, db.
 ** Boxplothoz ötlet
 Egy objektumba rakni minden adatot.
 Esetleg összehasonlítható, ha nullába transzformálom az alapesetet.
+
+* <2022-08-23 k>
+A Control & Treatment különböző színű.
+
+Jó ábra helye
+/KOrabbi_anyagok_legbővebben_CsekeCsabaSzakdolgozat/Adat
+ok/Kaszo_Elod_EGU2019joo/Plot.xlsx
+
+Az a jó, ha feljebb van a kezelés boxplotja!
+
+A kutakat a log weir és a reservoir alapján csoportosítani!
+
+Kell egy olyan magyarázó ábra, ami a műveletet magyarázza.
+
+Van napi csapadék.
+
+** Kérdések
+- [ ] 4 részes idősor ábra csapadékkal, a nyers adatok bemutatására. Zolitól kérdezni, hogy ez kell-e?
+- [ ] Fontos-e a fafaj?
+- [ ] Boxplot a nullára redukálást megvizsgálni, jó-e?
+- [ ] A jelenlegi boxplotoknál a kezelésből vontuk ki a kontrollt. Van-e jelentősége?
