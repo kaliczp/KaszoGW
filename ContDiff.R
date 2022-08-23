@@ -82,4 +82,8 @@ for(tti in 1:nrow(Diff.df)) {
 }
 ttcode  <- paste0(NoShftFull.df$Mode, NoShftFull.df$WellC, NoShftFull.df$WellT)
 NoShftFull.df$Code = factor(ttcode, levels = unique(ttcode))
-boxplot(Diff ~ Code, NoShftFull.df)
+
+fname <- paste0("BoxDiffAll")
+pdf(paste0(fname, ".pdf"), width = 297/25.4, height = 210 / 25.4)
+boxplot(Diff ~ Code, NoShftFull.df, main = "Full period", col = c(3,4), las = 2, xlab = "", ylab = "Difference [cm]")
+dev.off()
