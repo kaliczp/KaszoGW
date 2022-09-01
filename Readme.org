@@ -139,7 +139,48 @@ Kell egy olyan magyarázó ábra, ami a műveletet magyarázza.
 Van napi csapadék.
 
 ** Kérdések
-- [ ] 4 részes idősor ábra csapadékkal, a nyers adatok bemutatására. Zolitól kérdezni, hogy ez kell-e?
-- [ ] Fontos-e a fafaj?
-- [ ] Boxplot a nullára redukálást megvizsgálni, jó-e?
+- [X] 4 részes idősor ábra csapadékkal, a nyers adatok bemutatására. Zolitól kérdezni, hogy ez kell-e?
+- [X] Fontos-e a fafaj?
+- [X] Boxplot a nullára redukálást megvizsgálni, jó-e?
 - [ ] A jelenlegi boxplotoknál a kezelésből vontuk ki a kontrollt. Van-e jelentősége?
+
+* <2022-09-01 cs>
+Zolival.
+A centrált boxplotok jobban áttekinthetőek. Jó lesz.
+
+4 oldalas kell. Mehet fafaj szerint. Tölgy eleve magasabb fekvésben.
+Égeres mélyebb és magasabb fekvésben.
+
+-100 - (-200) (kezelt, mínusz kontroll)
+-100 - (-300)
+
+- [ ] A kút adatok a tereptől vannak? Valószínűleg a terepre átszámolva küldte Kaszó.
+
+** Újabb boxplot
+Beavatkozási időszakból kivonni a kontrollt!
+
+A különbségekre kell a t próba
+Intervetnion - kontroll időszak. Ezt a t-próba csinálta.
+
+
+** Ábrázolni
+*** x tengely
+Talajvízmélység 
+*** y tengelyen.
+Beavatkozás hatása (intervention impact) 
+Ez az Intervention - kontroll értékek!
+
+Kis boxplotok az ábrán. Még egy grafikon.
+Mérőhelyenként egy kupac.
+
+** Trend
+Kontrollkutak átlaga és hogyan változik?
+
+
+Mondta Andrásnak, hogy kell egy hosszú távú talajvíz adatsor.
+Amit a vizig mért. A területen mi következett be? Jellemző kutat.
+Valahol látott (valamijen jelentésben) egy hosszútávú idősort.
+
+Horváth Laci társszerző és telefon a taljvízkúttól.
+Van-e hosszú távú adat. Vízügyes Baláta-tó melletti kút.
+Észak felé folyik. Koordinátáit megmondja.
