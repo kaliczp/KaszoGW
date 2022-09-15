@@ -3,7 +3,9 @@
 Diff.df <- data.frame(
     Treat = c(5,6,7,8,9,10,11,12,13,14,15,16,17,1),
     Control = c(4,18,2,3,18,18,18,3,18,18,3,18,18,18),
-    Tree = factor(c("A", "A", "O", "O", "A", "A", "A", "O", "A", "A", "O", "A", "A", "A"))
+    Tree = factor(c("A", "A", "O", "O", "A", "A", "A", "O", "A", "A", "O", "A", "A", "A")),
+    TreatmentType = factor(c("Weir", "Weir", "Reservoir", "Reservoir", "Reservoir", "Weir",
+                             "Weir", "Weir", "Weir", "Weir", "Weir", "Weir", "Weir", "Weir"))
 )
 
 ## Calculate list of min & max
@@ -87,3 +89,30 @@ fname <- paste0("BoxDiffAll")
 pdf(paste0(fname, ".pdf"), width = 297/25.4, height = 210 / 25.4)
 boxplot(Diff ~ Code, NoShftFull.df, main = "Full period", col = c(3,4), las = 2, xlab = "", ylab = "Difference [cm]")
 dev.off()
+
+ShftFull.df <- data.frame(Diff = numeric(),
+                            Mode = character(),
+                            WellC = numeric(),
+                            WellT = numeric()#,
+##                            Code = character()
+                            )
+for(tti in 1:nrow(Diff.df)) {
+    aktNumCtrl <- Diff.df[tti, "Control"]
+    aktNumTreat <- Diff.df[tti, "Treat"]
+    Before <- gw.xts['2014-10-01/2016-09-30', aktNumTreat] - gw.xts['2014-10-01/2016-09-30', aktNumCtrl]
+    After <- gw.xts['2016-10-01/2018-09-30', aktNumTreat] - gw.xts['2016-10-01/2018-09-30', aktNumCtrl]
+    CenterDiff <- median(Before)
+    Before <- Before - CenterDiff
+    After <- After - CenterDiff
+    aktData = c(as.vector(coredata(Before)), as.vector(coredata(After)))
+    akt.df <- data.frame(Diff = aktData,
+                         Mode = c(rep("B", nrow(Before)),
+                                  rep("A", nrow(After))),
+                         WellC = aktNumCtrl,
+                         WellT = aktNumTreat)
+    ShftFull.df <- rbind(ShftFull.df, akt.df)
+}
+ttcode  <- paste0(ShftFull.df$Mode, ShftFull.df$WellC, ShftFull.df$WellT)
+ShftFull.df$Code = factor(ttcode, levels = unique(ttcode))
+
+boxplot(Diff ~ Code, ShftFull.df, col= c(3,4))
