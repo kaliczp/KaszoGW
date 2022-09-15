@@ -184,3 +184,16 @@ Valahol látott (valamijen jelentésben) egy hosszútávú idősort.
 Horváth Laci társszerző és telefon a taljvízkúttól.
 Van-e hosszú távú adat. Vízügyes Baláta-tó melletti kút.
 Észak felé folyik. Koordinátáit megmondja.
+
+* <2022-09-01 cs> Csáki Peti kutak
+Megírta a kút adatigénylés adatait.
+
+* <2022-09-05 h>
+Andrissal beszéltünk, hogy nézze meg az adatigénylést.
+
+* <2022-09-15 cs>
+Andris megnézi az ábra méreteket.
+
+- [X] Boxplot nullára húzva a teljes időszakra méret! 15 cm széles
+- [ ] Boxplot nullára húzva a vegetációs időszakra
+- [ ] Táblázat az adatokból t-próbával.
