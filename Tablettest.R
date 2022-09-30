@@ -4,4 +4,5 @@ NoShftFull.df$Mode <- factor(NoShftFull.df$Mode, levels = c("B", "A"), labels = 
 ## Treatment wells
 Diff.df$Treat
 
-NoShftFull.df[NoShftFull.df$WellT == Diff.df[1, "Treat"], ]
+treatwellnum <- 1
+t.test(Diff ~ Mode, NoShftFull.df[NoShftFull.df$WellT == Diff.df[treatwellnum, "Treat"], ])
