@@ -192,8 +192,30 @@ Megírta a kút adatigénylés adatait.
 Andrissal beszéltünk, hogy nézze meg az adatigénylést.
 
 * <2022-09-15 cs>
-Andris megnézi az ábra méreteket.
+- [ ] Andris megnézi az ábra méreteket.
 
 - [X] Boxplot nullára húzva a teljes időszakra méret! 15 cm széles
 - [ ] Boxplot nullára húzva a vegetációs időszakra
 - [ ] Táblázat az adatokból t-próbával.
+
+* <2022-10-02 v>
+Bocsánat, hogy megkésve, de idézem az insturction-ból a
+követelményeket a JH&HM figures-ra kigyűjteni.
+
+Figures should be informative, attractive and readable. Design them to
+fit either into 1 column (8.6 cm), intermediate width (12 cm) or to
+the width of the page (17.8 cm). At this print size, the photographs
+should have a minimum resolution 300 dpi, bitmapped graphs and
+drawings 1000 dpi, combinations of photographs and drawings 500
+dpi. Vector drawings should contain all the used fonts and the minimum
+line thickness should be 0.25 pt. Avoid any large size differences of
+the numbers, letters and symbols used within the figure. They must be
+sufficiently large such that they are at least 1.5 mm high in final
+printed form. Do not hide unwanted data in masks or layers. Do not use
+outer boxes or frames. Each figure with the figure caption should be
+arranged on a separate page at the end of the manuscript. After
+accepting the paper for publication, the figures should be submitted
+in TIFF, JPEG, EMF, WMF or MS Office files.
+
+* <2022-10-07 p> Kútszint a felszíntől
+Zoli videóüzenetéből vett utasítás alapján a felszíntől kell a talajvízszint.
