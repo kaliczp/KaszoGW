@@ -61,5 +61,6 @@ for(ttsel in 1:nrow(Separate.df)) {
              y = coredata(as.zoo(gw.xts[titlepoint ,tti])),
              paste("GW", tti), col = ttszin, lwd = 2, adj = c(0.5, 1.5))
     }
+    legend("bottomleft", legend = paste("GW", timesernums), col = 1:length(timesernums), lwd = 2)
     dev.off()
 }
