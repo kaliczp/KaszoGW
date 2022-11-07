@@ -192,7 +192,7 @@ Megírta a kút adatigénylés adatait.
 Andrissal beszéltünk, hogy nézze meg az adatigénylést.
 
 * <2022-09-15 cs>
-- [ ] Andris megnézi az ábra méreteket.
+- [X] Andris megnézi az ábra méreteket.
 
 - [X] Boxplot nullára húzva a teljes időszakra méret! 15 cm széles
 - [ ] Boxplot nullára húzva a vegetációs időszakra
@@ -219,3 +219,13 @@ in TIFF, JPEG, EMF, WMF or MS Office files.
 
 * <2022-10-07 p> Kútszint a felszíntől
 Zoli videóüzenetéből vett utasítás alapján a felszíntől kell a talajvízszint.
+* <2022-11-04 p> 
+-boxplot
+
+Beavatkozási időszakban lejjebb van.
+
+kontroll - kezelt negatív. Ha lejjebb megy
+
+Videófelvétel az ábrák gyártásáról
+* <2022-11-07 h>
+Meteorológia importja és ábrásítása.
