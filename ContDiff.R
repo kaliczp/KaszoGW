@@ -116,3 +116,15 @@ ttcode  <- paste0(ShftFull.df$Mode, ShftFull.df$WellC, ShftFull.df$WellT)
 ShftFull.df$Code = factor(ttcode, levels = unique(ttcode))
 
 boxplot(Diff ~ Code, ShftFull.df, col= c(3,4))
+
+## Nem normalizált ábra
+pdf("HA20221104/NemNormalizáltKülönbségek.pdf", height = 12 / 2.54, width = 18 / 2.54, points = 11)
+par(las = 2, mar = c(4.1, 4.1, 0.1, 0.1))
+boxplot(Diff ~ Code, NoShftFull.df, col= c(3,4), xlab = "", ylab = "STD")
+dev.off()
+
+## Normalizált ábra
+pdf("HA20221104/NormalizáltKülönbségek.pdf", height = 12 / 2.54, width = 18 / 2.54, points = 11)
+par(las = 2, mar = c(4.1, 4.1, 0.1, 0.1))
+boxplot(Diff ~ Code, ShftFull.df, col= c(3,4), xlab = "", ylab = "NSTD")
+dev.off()
