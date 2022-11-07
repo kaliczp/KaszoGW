@@ -1,0 +1,5 @@
+csap <- read.csv2("Meteo/Metadatok/KaszoNapiCsapi.csv")
+hom <- read.table("Meteo/Metadatok/KaszoNapiHomerseklet.csv", head = TRUE, dec = ",")
+csap[,1] <- gsub("\\.","-", csap[,1])
+csap.xts <- xts(csap[,2], as.POSIXct(csap[,1]))
+hom.xts <- xts(hom[,2], as.POSIXct(hom[,1]))
