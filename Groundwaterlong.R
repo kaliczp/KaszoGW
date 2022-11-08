@@ -5,8 +5,8 @@ GWnyers.df <- as.data.frame(read_excel("Adat/Nyers észlelt_1998_2004.xlsx", ran
 
 ## Conversion to xts
 library(xts)
-GWfeld.xts <- xts(1 - GWfeld.df[,2]/100, GWfeld.df[,"Idopont"])
-GWnyers.xts <- xts(1 - GWnyers.df[,2]/100, GWnyers.df[,"Idopont"])
+GWfeld.xts <- xts(0.78 - GWfeld.df[,2]/100, GWfeld.df[,"Idopont"])
+GWnyers.xts <- xts(0.78 - GWnyers.df[,2]/100, GWnyers.df[,"Idopont"])
 
 
 ## Plot
