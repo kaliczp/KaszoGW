@@ -64,3 +64,15 @@ for(ttsel in 1:nrow(Separate.df)) {
     legend("bottomleft", legend = paste("GW", timesernums), col = 1:length(timesernums), lwd = 2)
     dev.off()
 }
+
+
+pdf("KaszóCompare.pdf", width = 180/25.4, height = 50 / 25.4)
+par(mar = c(2.1, 4.1, 0.3, 4.1), las = 1)
+plot.zoo(gw.xts[,9], main = "", type = "n",
+         xaxs = "i", yaxs = "i",
+         ylim = c(-250, 100), ylab = "GW depth [cm]")
+grid(nx = NA, ny = NULL)
+lines(as.zoo(gw.xts[,9]), col = 1, lwd = 2)
+lines(as.zoo(gw.xts[,18]), col = 2, lwd = 2)
+box()
+dev.off()
