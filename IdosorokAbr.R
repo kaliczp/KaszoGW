@@ -70,7 +70,7 @@ csapweek.xts <- apply.weekly(csap.xts, function(x){sum(x, na.rm = TRUE)})
 csapweek.xts <- xts(coredata(csapweek.xts), as.Date(index(csapweek.xts)))
 IdoLim <- c(as.Date("2014-10-01"), as.Date("2018-10-08"))
 
-pdf("KaszóCompare.pdf", width = 180/25.4, height = 50 / 25.4)
+pdf("KaszóCompare.pdf", width = 180/25.4, height = 80 / 25.4)
 par(mar = c(2.1, 4.1, 0.5, 4.1), las = 1)
 plot.zoo(csapweek.xts, type = "n",
          xaxs = "i", yaxs = "i",
@@ -82,17 +82,17 @@ axis(1, as.POSIXct(paste(2015:2018, "01-01", sep = "-")),
      tck = 1, lab = FALSE, col = "lightgray", lty = "dotted")
 axis(4, at = c(0,50,100))
 axis(4, c(25,75), lab = FALSE)
-mtext("Csapadék [mm]", side = 4, line = 2.5, las = 0, col = "blue")
+mtext("Csapadék [mm]", side = 4, line = 3, las = 0, col = "blue")
 lines(as.zoo(csapweek.xts), type = "h", col = "blue", lwd = 3, lend = 1)
 par(new = TRUE)
 plot.zoo(gw.xts[,18], main = "", type = "n",
          xaxs = "i", yaxs = "i",
          xlab = "", ylab = "",
-         xlim = IdoLim, ylim = c(-250, 100),
+         xlim = IdoLim, ylim = c(-200, 100),
          yaxt = "n")
 lines(as.zoo(gw.xts[,18]), col = 1, lwd = 2)
 lines(as.zoo(gw.xts[,9]), col = 2, lwd = 2)
-axis(2, at = seq(-250, 50, by = 50))
-mtext("Talajvízmélység [cm]", side = 2, line = 2.5, las = 0)
+axis(2, at = seq(-200, 50, by = 50))
+mtext("Talajvízmélység [cm]", side = 2, line = 3.2, las = 0)
 box()
 dev.off()
