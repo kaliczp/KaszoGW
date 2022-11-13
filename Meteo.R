@@ -1,11 +1,11 @@
-csap <- read.csv2("Meteo/Metadatok/KaszoNapiCsapi.csv")
-hom <- read.table("Meteo/Metadatok/KaszoNapiHomerseklet.csv", head = TRUE, dec = ",")
-csap[,1] <- gsub("\\.","-", csap[,1])
-csap.xts <- xts(csap[,2], as.POSIXct(csap[,1]))
-hom.xts <- xts(hom[,2], as.POSIXct(hom[,1]))
+library(readxl)
+raw <- read_excel("Meteo/KaszoDailyTemp&Prec.xlsx"))
+## dplyr package necessary
+csap.xts <- xts(dplyr::pull(raw, 3), dplyr::pull(raw,Date))
+hom.xts <- xts(dplyr::pull(raw, 2), dplyr::pull(raw,Date))
 
 ## Ábrázolás
-IdoLim <- c(as.POSIXct("2014-10-30"), as.POSIXct("2018-10-16"))
+IdoLim <- c(as.POSIXct("2014-10-01"), as.POSIXct("2018-10-16"))
 
 pdf("meteo.pdf", width = 18/2.54, height = 8/2.54)
 par(mar = c(2.1, 4.1, 0.5, 4.1), las = 1, lend = 1)

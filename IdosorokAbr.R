@@ -68,7 +68,7 @@ for(ttsel in 1:nrow(Separate.df)) {
 
 csapweek.xts <- apply.weekly(csap.xts, function(x){sum(x, na.rm = TRUE)})
 csapweek.xts <- xts(coredata(csapweek.xts), as.Date(index(csapweek.xts)))
-IdoLim <- c(as.Date("2014-10-30"), as.Date("2018-10-08"))
+IdoLim <- c(as.Date("2014-10-01"), as.Date("2018-10-08"))
 
 pdf("KaszóCompare.pdf", width = 180/25.4, height = 50 / 25.4)
 par(mar = c(2.1, 4.1, 0.5, 4.1), las = 1)
