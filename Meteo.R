@@ -24,7 +24,7 @@ lines(as.zoo(csap.xts), type = "h", col = "blue", lwd = 2)
 par(new = TRUE, lend = 0)
 plot.zoo(hom.xts, type ="n",
          xaxs = "i", yaxs = "i",
-         xlab = "", ylab = "Hőmérséklet [C]",
+         xlab = "", ylab = expression(paste("Hőmérséklet [",degree*C,"]")),
          xlim = IdoLim, ylim = c(-11, 35))
 lines(as.zoo(hom.xts), lwd = 2)
 box()
