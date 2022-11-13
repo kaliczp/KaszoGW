@@ -70,6 +70,15 @@ csapweek.xts <- apply.weekly(csap.xts, function(x){sum(x, na.rm = TRUE)})
 csapweek.xts <- xts(coredata(csapweek.xts), as.Date(index(csapweek.xts)))
 IdoLim <- c(as.Date("2014-10-01"), as.Date("2018-10-08"))
 
+BeforeC.mean <- mean(gw.xts['/2016-10-03',18])
+AfterC.mean <- mean(gw.xts['2016-10-03/',18])
+BeforeT.mean <- mean(gw.xts['/2016-10-03',9])
+AfterT.mean <- mean(gw.xts['2016-10-03/',9])
+means.xts <- xts(data.frame(C = rep(c(BeforeC.mean,AfterC.mean), each=2),
+                            T = rep(c(BeforeT.mean,AfterT.mean), each=2)),
+                 as.Date(c(IdoLim[1],"2016-10-02","2016-10-03",IdoLim[2]))
+                 )
+
 pdf("KaszóCompare.pdf", width = 180/25.4, height = 80 / 25.4)
 par(mar = c(2.1, 4.1, 0.5, 4.1), las = 1)
 plot.zoo(csapweek.xts, type = "n",
@@ -94,6 +103,10 @@ lines(as.zoo(gw.xts['/2016-10-03',18]), col = 1, lwd = 3)
 lines(as.zoo(gw.xts['2016-10-03/',18]), col = 1, lwd = 2)
 lines(as.zoo(gw.xts['/2016-10-03',9]), col = 2, lwd = 3)
 lines(as.zoo(gw.xts['2016-10-03/',9]), col = 2, lwd = 2)
+lines(as.zoo(means.xts['/2016-10-02',"C"]), col = 1, lwd = 3, lty = "41")
+lines(as.zoo(means.xts['2016-10-03/',"C"]), col = 1, lwd = 2, lty = "41")
+lines(as.zoo(means.xts['/2016-10-02',"T"]), col = 2, lwd = 3, lty = "11")
+lines(as.zoo(means.xts['2016-10-03/',"T"]), col = 2, lwd = 2, lty = "11")
 axis(2, at = seq(-200, 50, by = 50))
 mtext("Talajvízmélység [cm]", side = 2, line = 3.2, las = 0)
 box()
