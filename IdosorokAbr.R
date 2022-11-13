@@ -79,12 +79,13 @@ means.xts <- xts(data.frame(C = rep(c(BeforeC.mean,AfterC.mean), each=2),
                  as.Date(c(IdoLim[1],"2016-10-02","2016-10-03",IdoLim[2]))
                  )
 
+
 pdf("KaszóCompare.pdf", width = 180/25.4, height = 80 / 25.4)
 par(mar = c(2.1, 4.1, 0.5, 4.1), las = 1)
 plot.zoo(csapweek.xts, type = "n",
          xaxs = "i", yaxs = "i",
          xlab = "", ylab = "",
-         xlim = IdoLim, ylim = c(200, 0),
+         xlim = IdoLim, ylim = c(275, 0),
          xaxt = "n", yaxt = "n")
 grid(nx = NA, ny = NULL)
 axis(1, as.POSIXct(paste(2015:2018, "01-01", sep = "-")),
@@ -97,7 +98,7 @@ par(new = TRUE)
 plot.zoo(gw.xts[,18], main = "", type = "n",
          xaxs = "i", yaxs = "i",
          xlab = "", ylab = "",
-         xlim = IdoLim, ylim = c(-200, 100),
+         xlim = IdoLim, ylim = c(-200, 75),
          yaxt = "n")
 lines(as.zoo(gw.xts['/2016-10-03',18]), col = 1, lwd = 3)
 lines(as.zoo(gw.xts['2016-10-03/',18]), col = 1, lwd = 2)
@@ -108,6 +109,7 @@ lines(as.zoo(means.xts['2016-10-03/',"C"]), col = 1, lwd = 2, lty = "41")
 lines(as.zoo(means.xts['/2016-10-02',"T"]), col = 2, lwd = 3, lty = "11")
 lines(as.zoo(means.xts['2016-10-03/',"T"]), col = 2, lwd = 2, lty = "11")
 axis(2, at = seq(-200, 50, by = 50))
+axis(2, at = seq(-175, 25, by = 50), lab = FALSE)
 mtext("Talajvízmélység [cm]", side = 2, line = 3.2, las = 0)
 box()
 dev.off()
