@@ -92,7 +92,7 @@ axis(1, as.POSIXct(paste(2015:2018, "01-01", sep = "-")),
      tck = 1, lab = FALSE, col = "lightgray", lty = "dotted")
 axis(4, at = c(0,50,100))
 axis(4, c(25,75), lab = FALSE)
-mtext("Csapadék [mm]", side = 4, line = 3, las = 0, col = "blue")
+mtext("Csapadék [mm]", side = 4, line = 3, las = 0, col = "blue", at = 55)
 lines(as.zoo(csapweek.xts), type = "h", col = "blue", lwd = 3, lend = 1)
 par(new = TRUE)
 plot.zoo(gw.xts[,18], main = "", type = "n",
