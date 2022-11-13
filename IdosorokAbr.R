@@ -90,8 +90,10 @@ plot.zoo(gw.xts[,18], main = "", type = "n",
          xlab = "", ylab = "",
          xlim = IdoLim, ylim = c(-200, 100),
          yaxt = "n")
-lines(as.zoo(gw.xts[,18]), col = 1, lwd = 2)
-lines(as.zoo(gw.xts[,9]), col = 2, lwd = 2)
+lines(as.zoo(gw.xts['/2016-10-03',18]), col = 1, lwd = 3)
+lines(as.zoo(gw.xts['2016-10-03/',18]), col = 1, lwd = 2)
+lines(as.zoo(gw.xts['/2016-10-03',9]), col = 2, lwd = 3)
+lines(as.zoo(gw.xts['2016-10-03/',9]), col = 2, lwd = 2)
 axis(2, at = seq(-200, 50, by = 50))
 mtext("Talajvízmélység [cm]", side = 2, line = 3.2, las = 0)
 box()
