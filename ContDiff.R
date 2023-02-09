@@ -65,6 +65,7 @@ for(tti in 1:nrow(Diff.df)) {
 
 NoShftFull.df <- data.frame(Diff = numeric(),
                             Mode = character(),
+                            Season = character(),
                             WellC = numeric(),
                             WellT = numeric()#,
 ##                            Code = character()
@@ -75,15 +76,18 @@ for(tti in 1:nrow(Diff.df)) {
     Before <- gw.xts['2014-10-01/2016-09-30', aktNumTreat] - gw.xts['2014-10-01/2016-09-30', aktNumCtrl]
     After <- gw.xts['2016-10-01/2018-09-30', aktNumTreat] - gw.xts['2016-10-01/2018-09-30', aktNumCtrl]
     aktData = c(as.vector(coredata(Before)), as.vector(coredata(After)))
+    akt.Month <- as.numeric(format(index(gw.xts['2014-10-01/2018-09-30']), "%m"))
     akt.df <- data.frame(Diff = aktData,
                          Mode = c(rep("B", nrow(Before)),
                                   rep("A", nrow(After))),
+                         Season = ifelse(akt.Month > 3 & akt.Month < 10, "Veget", "Dormant"),
                          WellC = aktNumCtrl,
                          WellT = aktNumTreat)
     NoShftFull.df <- rbind(NoShftFull.df, akt.df)
 }
 ttcode  <- paste0(NoShftFull.df$Mode, NoShftFull.df$WellC, NoShftFull.df$WellT)
 NoShftFull.df$Code = factor(ttcode, levels = unique(ttcode))
+NoShftFull.df$Season = factor(NoShftFull.df$Season, levels = unique(NoShftFull.df$Season))
 
 fname <- paste0("BoxDiffAll")
 pdf(paste0(fname, ".pdf"), width = 297/25.4, height = 210 / 25.4)
@@ -127,4 +131,12 @@ dev.off()
 pdf("HA20221104/NormalizáltKülönbségek.pdf", height = 12 / 2.54, width = 18 / 2.54, points = 11)
 par(las = 2, mar = c(4.1, 4.1, 0.1, 0.1))
 boxplot(Diff ~ Code, ShftFull.df, col= c(3,4), xlab = "", ylab = "NSTD")
+dev.off()
+
+
+
+## Vegetációs nem normalizált ábra
+pdf("HA20230209/VegetNemNormalizáltKülönbségek.pdf", height = 12 / 2.54, width = 18 / 2.54, points = 11)
+par(las = 2, mar = c(4.1, 4.1, 0.1, 0.1))
+boxplot(Diff ~ Code, NoShftFull.df[NoShftFull.df$Season == "Veget", ], col= c(3,4), xlab = "", ylab = "STD")
 dev.off()
