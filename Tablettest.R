@@ -11,9 +11,9 @@ ForTable.df$p.value  <-  numeric(14)
 
 for(treatwellnum in 1:nrow(Diff.df)) {
 takt <- t.test(Diff ~ Mode, NoShftFull.df[NoShftFull.df$WellT == Diff.df[treatwellnum, "Treat"], ])
-ForTable.df[treatwellnum, "meanBfr"] <- takt$estimate[1]
-ForTable.df[treatwellnum, "meanAftr"] <- takt$estimate[2]
-ForTable.df[treatwellnum, "p.value"] <- takt$p.value
+ForTable.df[treatwellnum, "meanBfr"] <- round(takt$estimate[1], 2)
+ForTable.df[treatwellnum, "meanAftr"] <- round(takt$estimate[2], 2)
+ForTable.df[treatwellnum, "p.value"] <- round(takt$p.value, 3)
 }
 
-write.table(ForTable.df, file = "ForTable.csv")
+write.table(ForTable.df, file = "ForTable.csv", dec = ",", row.names = FALSE)
