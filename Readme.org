@@ -229,3 +229,7 @@ kontroll - kezelt negatív. Ha lejjebb megy
 Videófelvétel az ábrák gyártásáról
 * <2022-11-07 h>
 Meteorológia importja és ábrásítása.
+
+* <2022-11-10 cs>
+Ez az ábra kellene még R-ből! :)
+A 9. és a 18. kút van megjelenítve.b
