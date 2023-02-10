@@ -140,3 +140,36 @@ pdf("HA20230209/VegetNemNormalizáltKülönbségek.pdf", height = 12 / 2.54, wid
 par(las = 2, mar = c(4.1, 4.1, 0.1, 0.1))
 boxplot(Diff ~ Code, NoShftFull.df[NoShftFull.df$Season == "Veget", ], col= c(3,4), xlab = "", ylab = "STD")
 dev.off()
+
+## Vegetációs normalizált ábra
+VegetShftFull.df <- data.frame(Diff = numeric(),
+                               Mode = character(),
+                               WellC = numeric(),
+                               WellT = numeric()#,
+                               ## Code = character()
+                            )
+for(tti in 1:nrow(Diff.df)) {
+    aktNumCtrl <- Diff.df[tti, "Control"]
+    aktNumTreat <- Diff.df[tti, "Treat"]
+    Before <- gw.xts['2015-04-01/2015-09-30', aktNumTreat] - gw.xts['2015-04-01/2015-09-30', aktNumCtrl]
+    Before <- c(Before, gw.xts['2016-04-01/2016-09-30', aktNumTreat] - gw.xts['2016-04-01/2016-09-30', aktNumCtrl])
+    After <- gw.xts['2017-04-01/2017-09-30', aktNumTreat] - gw.xts['2017-04-01/2017-09-30', aktNumCtrl]
+    After <- c(After, gw.xts['2018-04-01/2018-09-30', aktNumTreat] - gw.xts['2018-04-01/2018-09-30', aktNumCtrl])
+    CenterDiff <- median(Before)
+    Before <- Before - CenterDiff
+    After <- After - CenterDiff
+    aktData = c(as.vector(coredata(Before)), as.vector(coredata(After)))
+    akt.df <- data.frame(Diff = aktData,
+                         Mode = c(rep("B", nrow(Before)),
+                                  rep("A", nrow(After))),
+                         WellC = aktNumCtrl,
+                         WellT = aktNumTreat)
+    VegetShftFull.df <- rbind(VegetShftFull.df, akt.df)
+}
+ttcode  <- paste0(VegetShftFull.df$Mode, VegetShftFull.df$WellC, VegetShftFull.df$WellT)
+VegetShftFull.df$Code = factor(ttcode, levels = unique(ttcode))
+
+pdf("HA20230209/VegetNormalizáltKülönbségek.pdf", height = 12 / 2.54, width = 18 / 2.54, points = 11)
+par(las = 2, mar = c(4.1, 4.1, 0.1, 0.1))
+boxplot(Diff ~ Code, VegetShftFull.df, col= c(3,4), xlab = "", ylab = "NSTD")
+dev.off()
