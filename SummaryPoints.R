@@ -3,6 +3,7 @@
 SummaryPoints.df <- data.frame(
     Median = numeric(),
     Diff = numeric(),
+    Tree = character(),
     WellC = numeric(),
     WellT = numeric()
 )
@@ -15,9 +16,11 @@ for(tti in 1:nrow(Diff.df)) {
         median(NoShftFull.df[NoShftFull.df$Code == paste0("A", akt.num), "Diff"])
     akt.df <- data.frame(Median = akt.median,
                          Diff = akt.difference,
+                         Tree = Diff.df[tti, "Tree"],
                          WellC = aktNumCtrl,
                          WellT = aktNumTreat
                          )
     SummaryPoints.df <- rbind(SummaryPoints.df, akt.df)
 }
-plot(Diff ~ Median, SummaryPoints.df)
+plot(Diff ~ Median, SummaryPoints.df, type = "n")
+text(SummaryPoints.df[, c("Median", "Diff")], label = SummaryPoints.df$Tree)
