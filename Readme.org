@@ -233,3 +233,11 @@ Meteorológia importja és ábrásítása.
 * <2022-11-10 cs>
 Ez az ábra kellene még R-ből! :)
 A 9. és a 18. kút van megjelenítve.b
+
+* <2023-02-09 cs>
+
+Jellemző talajvíz mélység a felszíntől (az egész időszakra a kezelésnek a jellemzője) és
+a különbség Befor-after közötti egy grafikonba! A boxplot mediánjainak a különbsége mehet.
+delta-delta. Az lesz negatív is. Fafajok elkülönültek. Excelben is van!
+
+Teljes időszakra és vegetációs időszakra.
