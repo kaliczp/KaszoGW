@@ -24,5 +24,8 @@ for(tti in 1:nrow(Diff.df)) {
                          )
     SummaryPoints.df <- rbind(SummaryPoints.df, akt.df)
 }
+
+pdf("SummaryPoints.pdf", width = 10)
 plot(Diff ~ Median, SummaryPoints.df, type = "n")
 text(SummaryPoints.df[, c("Median", "Diff")], label = paste0(SummaryPoints.df$Tree, SummaryPoints.df$Treat))
+dev.off()
