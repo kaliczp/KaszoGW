@@ -241,3 +241,14 @@ a különbség Befor-after közötti egy grafikonba! A boxplot mediánjainak a k
 delta-delta. Az lesz negatív is. Fafajok elkülönültek. Excelben is van!
 
 Teljes időszakra és vegetációs időszakra.
+
+* <2023-02-13 h>
+Szépek lettek az ábrák! Meg kell nézni majd mi a különbség a teljes
+időszakhoz képest.
+
+A Summary pointsnál a függyőleges tengely nem fordítva van (mármint a
+különbségek inkább pozitívak legyenek ha talajvízszint emelkedés
+van). lehet csinálni boxlplotokat a szöveg mellé vagy ha az nem OK,
+egy pontot mediánként.
+
+Az ábrához javításként: After - before van és talajvíz mélység pozitívnak értelmezett!
