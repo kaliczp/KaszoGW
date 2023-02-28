@@ -33,3 +33,6 @@ for(treatwellnum in 1:nrow(Diff.df)) {
 }
 
 write.table(ForTableVeget.df, file = "ForTableVeget.csv", dec = ",", row.names = FALSE)
+
+## Differences Veget - Full
+cbind(ForTable.df[,1:4], p.valu.diff = ForTableVeget.df$p.value - ForTable.df$p.value)
