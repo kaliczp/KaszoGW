@@ -252,3 +252,41 @@ van). lehet csinálni boxlplotokat a szöveg mellé vagy ha az nem OK,
 egy pontot mediánként.
 
 Az ábrához javításként: After - before van és talajvíz mélység pozitívnak értelmezett!
+
+* <2023-02-23 cs>
+
+A Boxplotos ábrákhoz (mindkettőhöz a teljes és a vegetációs időszakhoz
+is) gondoltam statisztikát a kék és a zöld ábrákkal jelölt eloszlások
+közötti összehasonlításra. Ha t-próba nem jó akkor valami más.
+
+Beszéltünk már róla, hogy ez így nem biztos, hogy szabályos de valami
+különbség szignifikancia kellene a kontrol és a beavatkozással
+érintett időszakok között, a kontrol kutak és a beavatkozással
+érintett kutak térbeli külömbségének időbeli változását kimutatva.
+
+* <2023-02-25 szo>
+Péter, mielőtt még statisztikáznál "R"-be, felmerült egy kérdésem, de lehet csak belekavarodtam. És bízom benn, hogy Jobban vagy!
+Katit is bevonom, hátha ő veszi észre a kérdésemre a választ! 😎
+
+Zoli! Kérlek jól rágjuk át ezt most, Légyszíves alaposan nézd, mert akkor bukik a többi, ha itt baki van!!!!
+
+kép.png
+
+Az ábra mellett a kommentbe: próbáltam minden variációt végigfuttatni. Nézzétek majd meg, hogy nem számoltam e félre, előfordulhat!!!
+Tehát kezdődik ott egy elágazás, hogy Sampling (mintavételi kút) - Control (kontroll kút).
+
+Amit pirossal bejelöltem:
+Az eredményeik így: +9, +16 VAGY -9, -16
+
+
+Eddig AZONBAN e mentén haladtunk:
+kép.png
+AZÉRT (ha nem értettem félre), hogy nagyobb pozitív számot kapjunk az impactra.
+
+Kérdésem, hogy így mennyire van ez "rendben" a varriációk tükrében?!?!
+Esetleg abszolút értéket valahova? Vagy nem kivonni, hanem összeadni?
+
+Ami a boxplotton (teljes időszak, nem csak a vegetációs) Így jelenik meg (oké, ott mediánok vannak).
+(A szóban forgó kútpáros pirossal bekeretezve)
+
+kép.png
