@@ -290,3 +290,7 @@ Ami a boxplotton (teljes időszak, nem csak a vegetációs) Így jelenik meg (ok
 (A szóban forgó kútpáros pirossal bekeretezve)
 
 kép.png
+
+* <2023-02-28 k>
+Zoli magyarázat: A multkori levélben írt feladat magyarázata:
+Legyen benne a t-próba átlaga és a 95% konfidencia intervallum.
