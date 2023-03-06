@@ -7,12 +7,16 @@ Diff.df$Treat
 ForTable.df <- Diff.df
 ForTable.df$meanBfr  <-  numeric(14)
 ForTable.df$meanAftr  <-  numeric(14)
+ForTable.df$conf.int.lwr  <-  numeric(14)
+ForTable.df$conf.int.upr  <-  numeric(14)
 ForTable.df$p.value  <-  numeric(14)
 
 for(treatwellnum in 1:nrow(Diff.df)) {
 takt <- t.test(Diff ~ Mode, NoShftFull.df[NoShftFull.df$WellT == Diff.df[treatwellnum, "Treat"], ])
 ForTable.df[treatwellnum, "meanBfr"] <- round(takt$estimate[1], 2)
 ForTable.df[treatwellnum, "meanAftr"] <- round(takt$estimate[2], 2)
+ForTable.df[treatwellnum, "conf.int.lwr"] <- round(takt$conf.int[1], 2)
+ForTable.df[treatwellnum, "conf.int.upr"] <- round(takt$conf.int[2], 2)
 ForTable.df[treatwellnum, "p.value"] <- round(takt$p.value, 3)
 }
 
