@@ -1,5 +1,5 @@
 ## Full database = NoShftFull.df
-NoShftFull.df$Mode <- factor(NoShftFull.df$Mode, levels = c("B", "A"), labels = c("Before", "After"))
+NoShftFull.df$Mode <- factor(NoShftFull.df$Mode, levels = c("A", "B"), labels = c("After", "Before"))
 
 ## Treatment wells
 Diff.df$Treat
@@ -13,8 +13,8 @@ ForTable.df$p.value  <-  numeric(14)
 
 for(treatwellnum in 1:nrow(Diff.df)) {
 takt <- t.test(Diff ~ Mode, NoShftFull.df[NoShftFull.df$WellT == Diff.df[treatwellnum, "Treat"], ])
-ForTable.df[treatwellnum, "meanBfr"] <- round(takt$estimate[1], 2)
-ForTable.df[treatwellnum, "meanAftr"] <- round(takt$estimate[2], 2)
+ForTable.df[treatwellnum, "meanBfr"] <- round(takt$estimate[2], 2)
+ForTable.df[treatwellnum, "meanAftr"] <- round(takt$estimate[1], 2)
 ForTable.df[treatwellnum, "conf.int.lwr"] <- round(takt$conf.int[1], 2)
 ForTable.df[treatwellnum, "conf.int.upr"] <- round(takt$conf.int[2], 2)
 ForTable.df[treatwellnum, "p.value"] <- round(takt$p.value, 3)
@@ -33,8 +33,8 @@ ForTableVeget.df$p.value  <-  numeric(14)
 for(treatwellnum in 1:nrow(Diff.df)) {
     takt <- t.test(Diff ~ Mode, NoShftFull.df[NoShftFull.df$WellT == Diff.df[treatwellnum, "Treat"] &
                                             NoShftFull.df$Season == "Veget", ])
-    ForTableVeget.df[treatwellnum, "meanBfr"] <- round(takt$estimate[1], 2)
-    ForTableVeget.df[treatwellnum, "meanAftr"] <- round(takt$estimate[2], 2)
+    ForTableVeget.df[treatwellnum, "meanBfr"] <- round(takt$estimate[2], 2)
+    ForTableVeget.df[treatwellnum, "meanAftr"] <- round(takt$estimate[1], 2)
     ForTableVeget.df[treatwellnum, "conf.int.lwr"] <- round(takt$conf.int[1], 2)
     ForTableVeget.df[treatwellnum, "conf.int.upr"] <- round(takt$conf.int[2], 2)
     ForTableVeget.df[treatwellnum, "p.value"] <- round(takt$p.value, 3)
