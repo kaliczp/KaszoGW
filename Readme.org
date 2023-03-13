@@ -301,3 +301,30 @@ Annyi észrevételem lenne, hogy a konfidenciaintervallumok estében is
 most a pozitív hatások (mikor talajvízszint emelkedések vannak)
 negatív számmal vannak jelölve és ez nem szerencsés, jobb lenne
 előjelet cserélni.
+
+* <2023-03-13 h>
+
+Piros táblázat Fig. 5 után. Ezt a teljes és a vegetációs időszak
+összevetésére Készítettem. A p.value diff a kettő különbsége.
+Az Full és a Veget táblázatokban. Példa: a második sorban nem nulla egyik sem
+6 vs. 18 kutak: 0.159 - 0.076 = 0.083.
+
+A Full és Veget táblázatban a p.diff értékek nullái a kerekítés miatt nullák,
+tulajdonképpen < 0.001-et lehetne ide írni.
+
+A p-érték ha kicsi, akkor a null-hipotézis, az az a két várható érték
+megegyezik fennálása esetén nagyon kicsi a valószínűsége, hogy a
+mintához hasonló adat előáll.  Ez itt azt jelenti, hogy a kezelés és a
+kontroll időszakok jelentősen külöböznek, amikor a p-érték kicsi.
+Definíció szerűen: A p-érték annak a valószínűsége, hogy a
+nullhipotézis (itt előtte és utánna azonosak a talajvízszintek)
+fennálása esetén a véletlen játéka a nullhipotézisnek legalább annyira
+ellentmondó mintát produkál, mint a ténylegesen megfigyelt minta.
+
+meanBfr = a különbségek átlaga a kezelés előtt
+meanAftr = a különbségek átlaga a kezelések után
+
+A conf.int.lwr = a 95% konfidencia intervallum alsó határa
+A conf.intupr = a 95%-os konfidencia intervallum felső határa
+A fenti két érték között helyezkedik el nagy valószínűséggel (95%)
+a különbség.
