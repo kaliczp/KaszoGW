@@ -27,6 +27,7 @@ for(tti in 1:nrow(Diff.df)) {
 SummaryPoints.df$Median <- SummaryPoints.df$Median * -1
 
 pdf("SummaryPoints.pdf", width = 10)
-plot(Diff ~ Median, SummaryPoints.df, type = "n")
-text(SummaryPoints.df[, c("Median", "Diff")], label = paste0(SummaryPoints.df$Tree, SummaryPoints.df$Treat))
+plot(Diff ~ Median, SummaryPoints.df, xlim = c(-26, 169),
+     xlab = "Median groundwater level", ylab = "Median of temporal differences")
+text(SummaryPoints.df[, c("Median", "Diff")], label = paste0(SummaryPoints.df$Tree, SummaryPoints.df$Treat), adj = c(0.5,1.4))
 dev.off()
