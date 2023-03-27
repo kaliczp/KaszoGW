@@ -1,5 +1,5 @@
 library(readxl)
-raw <- read_excel("Meteo/KaszoDailyTemp&Prec.xlsx"))
+raw <- read_excel("Meteo/KaszoDailyTempPrec.xlsx")
 ## dplyr package necessary
 csap.xts <- xts(dplyr::pull(raw, 3), dplyr::pull(raw,Date))
 hom.xts <- xts(dplyr::pull(raw, 2), dplyr::pull(raw,Date))
