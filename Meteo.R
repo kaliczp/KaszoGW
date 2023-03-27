@@ -29,3 +29,8 @@ plot.zoo(hom.xts, type ="n",
 lines(as.zoo(hom.xts), lwd = 2)
 box()
 dev.off()
+
+## Yearly and monthly sums
+csapyear.xts <- apply.yearly(csap.xts, function(x){sum(x, na.rm = TRUE)})
+csapmonth.xts <- apply.monthly(csap.xts, function(x){sum(x, na.rm = TRUE)})
+write.zoo(csapmonth.xts, "csapmonth.csv", dec = ",", sep = ";", eol = "\r\n", quote = FALSE)
