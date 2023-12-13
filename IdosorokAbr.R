@@ -120,17 +120,16 @@ GWpairs <- data.frame(Treat = c(5:17,1),
            Ctrl = c(4,18,2,3,18,18,18,3,18,18,3,18,18,18)
            )
 
+pdf("AllKaszóCompare.pdf", width = 180/25.4, height = 80 / 25.4)
 for(tti in 1:nrow(GWpairs)) {
-    pdf(paste("KaszóCompare",
-              GWpairs[tti,"Treat"],
-              GWpairs[tti,"Ctrl"],
-              ".pdf", sep = "_"), width = 180/25.4, height = 80 / 25.4)
     par(mar = c(2.1, 4.1, 0.5, 4.1), las = 1)
     plot.zoo(csapweek.xts, type = "n",
              xaxs = "i", yaxs = "i",
              xlab = "", ylab = "",
              xlim = IdoLim, ylim = c(275, 0),
              xaxt = "n", yaxt = "n")
+    text(x = as.Date("2015-01-01"), y = 100,
+         paste("Treat:",GWpairs[tti,"Treat"], "Ctrl:", GWpairs[tti,"Ctrl"]), cex = 3, col = "gray", adj = c(0,0))
     grid(nx = NA, ny = NULL)
     axis(1, as.POSIXct(paste(2015:2018, "01-01", sep = "-")),
          tck = 1, lab = FALSE, col = "lightgray", lty = "dotted")
@@ -139,11 +138,12 @@ for(tti in 1:nrow(GWpairs)) {
     mtext("Csapadék [mm]", side = 4, line = 3, las = 0, col = "blue", at = 55)
     lines(as.zoo(csapweek.xts), type = "h", col = "blue", lwd = 3, lend = 1)
     par(new = TRUE)
+    allgwvec <- as.vector(coredata(gw.xts[,GWpairs[tti,c("Ctrl", "Treat")]]))
     plot.zoo(gw.xts[,GWpairs[tti,"Ctrl"]], main = "", type = "n",
              xaxs = "i", yaxs = "i",
              xlab = "", ylab = "",
              xlim = IdoLim,
-             # ylim = c(-200, 75),
+             ylim = c(min(allgwvec), max(allgwvec)),
              yaxt = "n")
     lines(as.zoo(gw.xts['/2016-10-03', GWpairs[tti,"Ctrl"]]), col = 1, lwd = 3)
     lines(as.zoo(gw.xts['2016-10-03/', GWpairs[tti,"Ctrl"]]), col = 1, lwd = 2)
@@ -154,5 +154,5 @@ for(tti in 1:nrow(GWpairs)) {
     mtext("Talajvízmélység [cm]", side = 2, line = 3.2, las = 0)
     legend("bottomleft", legend = c("Kontroll", "Kezelt"), lwd = 2, col = 1:2, cex = 0.9)
     box()
-    dev.off()
 }
+dev.off()
