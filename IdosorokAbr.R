@@ -114,3 +114,48 @@ mtext("Talajvízmélység [cm]", side = 2, line = 3.2, las = 0)
 legend("bottomleft", legend = c("Kontroll", "Kezelt"), lwd = 2, col = 1:2, cex = 0.9)
 box()
 dev.off()
+
+## GW pairs
+GWpairs <- data.frame(Treat = c(5:17,1),
+           Ctrl = c(4,18,2,3,18,18,18,3,18,18,3,18,18,18)
+           )
+
+for(tti in 1:nrow(GWpairs)) {
+    pdf(paste("KaszóCompare",
+              GWpairs[tti,"Treat"],
+              GWpairs[tti,"Ctrl"],
+              ".pdf", sep = "_"), width = 180/25.4, height = 80 / 25.4)
+    par(mar = c(2.1, 4.1, 0.5, 4.1), las = 1)
+    plot.zoo(csapweek.xts, type = "n",
+             xaxs = "i", yaxs = "i",
+             xlab = "", ylab = "",
+             xlim = IdoLim, ylim = c(275, 0),
+             xaxt = "n", yaxt = "n")
+    grid(nx = NA, ny = NULL)
+    axis(1, as.POSIXct(paste(2015:2018, "01-01", sep = "-")),
+         tck = 1, lab = FALSE, col = "lightgray", lty = "dotted")
+    axis(4, at = c(0,50,100))
+    axis(4, c(25,75), lab = FALSE)
+    mtext("Csapadék [mm]", side = 4, line = 3, las = 0, col = "blue", at = 55)
+    lines(as.zoo(csapweek.xts), type = "h", col = "blue", lwd = 3, lend = 1)
+    par(new = TRUE)
+    plot.zoo(gw.xts[,18], main = "", type = "n",
+             xaxs = "i", yaxs = "i",
+             xlab = "", ylab = "",
+             xlim = IdoLim, ylim = c(-200, 75),
+             yaxt = "n")
+    lines(as.zoo(gw.xts['/2016-10-03',18]), col = 1, lwd = 3)
+    lines(as.zoo(gw.xts['2016-10-03/',18]), col = 1, lwd = 2)
+    lines(as.zoo(gw.xts['/2016-10-03',9]), col = 2, lwd = 3)
+    lines(as.zoo(gw.xts['2016-10-03/',9]), col = 2, lwd = 2)
+    lines(as.zoo(means.xts['/2016-10-02',"C"]), col = 1, lwd = 3, lty = "41")
+    lines(as.zoo(means.xts['2016-10-03/',"C"]), col = 1, lwd = 2, lty = "41")
+    lines(as.zoo(means.xts['/2016-10-02',"T"]), col = 2, lwd = 3, lty = "11")
+    lines(as.zoo(means.xts['2016-10-03/',"T"]), col = 2, lwd = 2, lty = "11")
+    axis(2, at = seq(-200, 50, by = 50))
+    axis(2, at = seq(-175, 25, by = 50), lab = FALSE)
+    mtext("Talajvízmélység [cm]", side = 2, line = 3.2, las = 0)
+    legend("bottomleft", legend = c("Kontroll", "Kezelt"), lwd = 2, col = 1:2, cex = 0.9)
+    box()
+    dev.off()
+}
