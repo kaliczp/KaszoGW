@@ -118,6 +118,11 @@ for(tti in 1:nrow(Diff.df)) {
 }
 ttcode  <- paste0(ShftFull.df$Mode, ShftFull.df$WellC, ShftFull.df$WellT)
 ShftFull.df$Code = factor(ttcode, levels = unique(ttcode))
+## Generate type
+ttcode[grep("[AB]189", ttcode)] <- "Reservoir"
+ttcode[grep("[AB][23][78]", ttcode)] <- "Reservoir"
+ttcode[grep("[AB]", ttcode)] <- "Weir"
+ShftFull.df$Type <- factor(ttcode, levels = unique(ttcode))
 
 boxplot(Diff ~ Code, ShftFull.df, col= c(3,4))
 
@@ -131,6 +136,18 @@ dev.off()
 pdf("HA20221104/NormalizáltKülönbségek.pdf", height = 12 / 2.54, width = 18 / 2.54, points = 11)
 par(las = 2, mar = c(4.1, 4.1, 0.1, 0.1))
 boxplot(Diff ~ Code, ShftFull.df, col= c(3,4), xlab = "", ylab = "NSTD")
+dev.off()
+
+
+## Normalizált ábra gát és küszöb
+pdf("HA20231213/NormalizáltKülönbségekReserv.pdf", height = 12 / 2.54, width = 18 / 2.54, points = 11)
+par(las = 2, mar = c(4.1, 4.1, 0.1, 0.1))
+boxplot(Diff ~ Code, droplevels(ShftFull.df[ShftFull.df$Type == "Reservoir",]), col= c(3,4), xlab = "", ylab = "NSTD")
+dev.off()
+
+pdf("HA20231213/NormalizáltKülönbségekWeir.pdf", height = 12 / 2.54, width = 18 / 2.54, points = 11)
+par(las = 2, mar = c(4.1, 4.1, 0.1, 0.1))
+boxplot(Diff ~ Code, droplevels(ShftFull.df[ShftFull.df$Type == "Weir",]), col= c(3,4), xlab = "", ylab = "NSTD")
 dev.off()
 
 
@@ -168,8 +185,27 @@ for(tti in 1:nrow(Diff.df)) {
 }
 ttcode  <- paste0(VegetShftFull.df$Mode, VegetShftFull.df$WellC, VegetShftFull.df$WellT)
 VegetShftFull.df$Code = factor(ttcode, levels = unique(ttcode))
+## Generate type
+ttcode[grep("[AB]189", ttcode)] <- "Reservoir"
+ttcode[grep("[AB][23][78]", ttcode)] <- "Reservoir"
+ttcode[grep("[AB]", ttcode)] <- "Weir"
+VegetShftFull.df$Type <- factor(ttcode, levels = unique(ttcode))
+
 
 pdf("HA20230209/VegetNormalizáltKülönbségek.pdf", height = 12 / 2.54, width = 18 / 2.54, points = 11)
 par(las = 2, mar = c(4.1, 4.1, 0.1, 0.1))
 boxplot(Diff ~ Code, VegetShftFull.df, col= c(3,4), xlab = "", ylab = "NSTD")
+dev.off()
+
+## logweir 3,2,4,18,12,15,11,10,6,16,14,5,1,13,17
+## reservoir 8,7,9, azaz 27, 38, 189
+
+pdf("HA20231213/VegetNormalizáltKülönbségekWeir.pdf", height = 12 / 2.54, width = 18 / 2.54, points = 11)
+par(las = 2, mar = c(4.1, 4.1, 0.1, 0.1))
+boxplot(Diff ~ Code, droplevels(VegetShftFull.df[VegetShftFull.df$Type == "Weir",]), col= c(3,4), xlab = "", ylab = "NSTD")
+dev.off()
+
+pdf("HA20231213/VegetNormalizáltKülönbségekReserv.pdf", height = 12 / 2.54, width = 18 / 2.54, points = 11)
+par(las = 2, mar = c(4.1, 4.1, 0.1, 0.1))
+boxplot(Diff ~ Code, droplevels(VegetShftFull.df[VegetShftFull.df$Type == "Reservoir",]), col= c(3,4), xlab = "", ylab = "NSTD")
 dev.off()
