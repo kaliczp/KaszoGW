@@ -328,3 +328,15 @@ A conf.int.lwr = a 95% konfidencia intervallum alsó határa
 A conf.intupr = a 95%-os konfidencia intervallum felső határa
 A fenti két érték között helyezkedik el nagy valószínűséggel (95%)
 a különbség.
+
+* <2023-12-18 h>
+Gyakoriság-Tartósság
+
+Talajvíz adatsorokra, konkrétan mit, elfelejtette.
+
+Felhívja Zolit.
+Mire kell a gyakoriság-tartósság görbe. Térbeli különbség.
+Beavatkozás előttibe?
+Maga sem tudja, hogy mi jön ki belőle. Kutat kiválasztani, ami jó, amit jobbnak
+találtunk. Beavatkozás előtti, vagy utánni esetben mutat-e valamit?
+Lehet-e bármit is mondani előtte. Nézzük meg, hátha látható valami.
