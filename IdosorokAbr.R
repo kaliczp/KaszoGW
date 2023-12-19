@@ -158,6 +158,7 @@ for(tti in 1:nrow(GWpairs)) {
 dev.off()
 
 ## Gy-T
+pdf("Gy-T.pdf", width = 14)
 tti <- 5
 Type <- "Ctrl"
 Time <- "Before"
@@ -169,9 +170,6 @@ GyT.GW(x = gw.xts[TimeInd, GWpairs[tti,Type]],
 text(x = 10 , y = -120,
      paste0("Well: ", GWpairs[tti,Type],
             ", Type: ", Type, ", ", Time), cex = 3, col = "gray", adj = c(0,0))
-
-tti <- 5
-Type <- "Ctrl"
 Time <- "After"
 TimeInd <- ifelse(Time == "Before", '/2016-10-03', '2016-10-03/')
 GyT.GW(x = gw.xts[TimeInd, GWpairs[tti,Type]],
@@ -181,4 +179,23 @@ GyT.GW(x = gw.xts[TimeInd, GWpairs[tti,Type]],
 text(x = 10 , y = -180,
      paste0("Well: ", GWpairs[tti,Type],
             ", Type: ", Type, ", ", Time), cex = 3, col = "gray", adj = c(0,0))
-
+Type <- "Treat"
+Time <- "Before"
+TimeInd <- ifelse(Time == "Before", '/2016-10-03', '2016-10-03/')
+GyT.GW(x = gw.xts[TimeInd, GWpairs[tti,Type]],
+       ind = -160,
+       veg = 30,
+       koz = 10)
+text(x = 10 , y = -150,
+     paste0("Well: ", GWpairs[tti,Type],
+            ", Type: ", Type, ", ", Time), cex = 3, col = "gray", adj = c(0,0))
+Time <- "After"
+TimeInd <- ifelse(Time == "Before", '/2016-10-03', '2016-10-03/')
+GyT.GW(x = gw.xts[TimeInd, GWpairs[tti,Type]],
+       ind = -160,
+       veg = 30,
+       koz = 10)
+text(x = 10 , y = -150,
+     paste0("Well: ", GWpairs[tti,Type],
+            ", Type: ", Type, ", ", Time), cex = 3, col = "gray", adj = c(0,0))
+dev.off()
