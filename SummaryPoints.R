@@ -32,3 +32,13 @@ plot(Diff ~ Median, SummaryPoints.df, xlim = c(-26, 169), ylim = c(-77,23),
 text(SummaryPoints.df[, c("Median", "Diff")], label = paste(SummaryPoints.df$Tree, SummaryPoints.df$Treat), adj = c(0.5,1.4))
 text(SummaryPoints.df[, c("Median", "Diff")], label = paste(SummaryPoints.df$WellT, SummaryPoints.df$WellC, sep = "-"), adj = c(0.5,2.6))
 dev.off()
+
+## Visszavált korábbi kiolsztásra
+SummaryPoints.df$DiffNeg <- SummaryPoints.df$Diff * -1
+
+pdf("SummaryPoints.pdf", width = 10)
+plot(DiffNeg ~ Median, SummaryPoints.df, xlim = c(-26, 169), ylim = c(-30,75),
+     xlab = "Median groundwater level", ylab = "Median of temporal differences")
+text(SummaryPoints.df[, c("Median", "DiffNeg")], label = paste(SummaryPoints.df$Tree, SummaryPoints.df$Treat), adj = c(0.5,1.4))
+text(SummaryPoints.df[, c("Median", "DiffNeg")], label = paste(SummaryPoints.df$WellT, SummaryPoints.df$WellC, sep = "-"), adj = c(0.5,2.6))
+dev.off()
