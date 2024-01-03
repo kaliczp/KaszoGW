@@ -42,3 +42,25 @@ plot(DiffNeg ~ Median, SummaryPoints.df, xlim = c(-26, 169), ylim = c(-30,75),
 text(SummaryPoints.df[, c("Median", "DiffNeg")], label = paste(SummaryPoints.df$Tree, SummaryPoints.df$Treat), adj = c(0.5,1.4))
 text(SummaryPoints.df[, c("Median", "DiffNeg")], label = paste(SummaryPoints.df$WellT, SummaryPoints.df$WellC, sep = "-"), adj = c(0.5,2.6))
 dev.off()
+
+
+### Válogatás a regresszióhoz egy pdf fájlba
+pdf("SummaryPointsSeparated.pdf", width = 10)
+### Alábbi sorokkal külön-külön futtatni a lenti ábrát
+## Csak tölgy 
+SummaryAktTree.df <- SummaryPoints.df[SummaryPoints.df$Tree == "Oak",]
+## Csak éger
+SummaryAktTree.df <- SummaryPoints.df[SummaryPoints.df$Tree == "Alder",]
+## Csak éger kiugró töröl
+SummaryAktTree.df <- SummaryAktTree.df[-1,]
+
+## Ábra a fenti válogatásokhoz
+AktTree.lm <- lm(DiffNeg ~ Median, SummaryAktTree.df)
+plot(DiffNeg ~ Median, SummaryAktTree.df, xlim = c(-26, 169), ylim = c(-30,75),
+     xlab = "Median groundwater level", ylab = "Median of temporal differences")
+text(SummaryAktTree.df[, c("Median", "DiffNeg")], label = paste(SummaryAktTree.df$Tree, SummaryAktTree.df$Treat), adj = c(0.5,1.4))
+text(SummaryAktTree.df[, c("Median", "DiffNeg")], label = paste(SummaryAktTree.df$WellT, SummaryAktTree.df$WellC, sep = "-"), adj = c(0.5,2.6))
+abline(AktTree.lm, lwd = 2)
+
+## Miután minden válogatással lefuttattam:
+dev.off()

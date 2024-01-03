@@ -340,3 +340,9 @@ Beavatkozás előttibe?
 Maga sem tudja, hogy mi jön ki belőle. Kutat kiválasztani, ami jó, amit jobbnak
 találtunk. Beavatkozás előtti, vagy utánni esetben mutat-e valamit?
 Lehet-e bármit is mondani előtte. Nézzük meg, hátha látható valami.
+
+* <2024-01-02 k>
+Gy-T értelmezés.
+SummaryPoints ábrát szétválogattuk.
+
+Egyenesek rátéve.
