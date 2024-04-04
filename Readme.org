@@ -346,3 +346,24 @@ Gy-T értelmezés.
 SummaryPoints ábrát szétválogattuk.
 
 Egyenesek rátéve.
+
+* <2024-01-19 p>
+Néztük az ábrával.
+13 és 18-as kiválasztva.
+
+** GY-T
+Gyakoriság, tartósságnál a más színnel legyen mögötte a másik GY-T
+
+Még különbség nem kell, úgy ábrázolni, hogy előtte és utána nem egy függvény az ábrán,
+amiből egyik a kontroll (fekete) beavatkozás (piros)
+
+13 és 18-ra.
+
+** Továbfejlesztés
+Boxplotok előtte és utánna.
+
+Úgy kellene csinálni, hogy először kivonni a kezelt kútból a kontroll
+kutat és különbség idősorra az előtte utána.
+
+** Boxplotok
+Azt mondák OK.
