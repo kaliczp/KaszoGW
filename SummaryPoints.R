@@ -64,3 +64,26 @@ abline(AktTree.lm, lwd = 2)
 
 ## Miután minden válogatással lefuttattam:
 dev.off()
+
+### Válogatás a regresszióhoz egy pdf fájlba
+pdf("SummaryPointsDepthSeparated.pdf", width = 10)
+### Alábbi sorokkal külön-külön futtatni a lenti ábrát
+## Shallow
+AktMain <- "Shallow"
+SummaryAktTree.df <- SummaryPoints.df[SummaryPoints.df$Median <= 100,]
+
+## Deep
+AktMain <- "Deep"
+SummaryAktTree.df <- SummaryPoints.df[SummaryPoints.df$Median > 100,]
+
+## Ábra a fenti válogatásokhoz
+AktTree.lm <- lm(DiffNeg ~ Median, SummaryAktTree.df)
+plot(DiffNeg ~ Median, SummaryAktTree.df, xlim = c(-26, 169), ylim = c(-30,75),
+     main = AktMain,
+     xlab = "Median groundwater level", ylab = "Median of temporal differences")
+text(SummaryAktTree.df[, c("Median", "DiffNeg")], label = paste(SummaryAktTree.df$Tree, SummaryAktTree.df$Treat), adj = c(0.5,1.4))
+text(SummaryAktTree.df[, c("Median", "DiffNeg")], label = paste(SummaryAktTree.df$WellT, SummaryAktTree.df$WellC, sep = "-"), adj = c(0.5,2.6))
+abline(AktTree.lm, lwd = 2)
+
+## Miután minden válogatással lefuttattam:
+dev.off()
