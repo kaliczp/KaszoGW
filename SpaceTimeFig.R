@@ -5,8 +5,9 @@ RawTable <- as.data.frame(read_excel("Teszt.xlsx"))
 GrowingTable <- RawTable[3:16,1:10]
 FullTable <- RawTable[21:34,1:10]
 
-pdf("SpaceTimeDotFig.pdf", width = 12.5/2.54, height = 7.5/2.54)
-par(las = 2)
+pdf("SpaceTimeDotFig.pdf", width = 13/2.54, height = 7.5/2.54,
+    pointsize = 9)
+par(las = 2, mar = c(5.1, 4.1, 0.2, 0.2))
 plot(1:nrow(GrowingTable), GrowingTable[,10],
      ylim = c(-17,90),
      xaxt = "n",
