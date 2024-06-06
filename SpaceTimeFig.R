@@ -5,6 +5,7 @@ RawTable <- as.data.frame(read_excel("Teszt.xlsx"))
 GrowingTable <- RawTable[3:16,1:10]
 FullTable <- RawTable[21:34,1:10]
 
+pdf("SpaceTimeDotFig.pdf", width = 12.5/2.54, height = 7.5/2.54)
 par(las = 2)
 plot(1:nrow(GrowingTable), GrowingTable[,10],
      ylim = c(-17,90),
@@ -21,3 +22,4 @@ points(1:nrow(GrowingTable), GrowingTable[,10], pch = 21, bg = "#92d050")
 axis(1, at = 1:nrow(GrowingTable),
      label = paste(GrowingTable[,1], GrowingTable[,2], sep = "-"))
 mtext("Talajvízkút-párok", side = 1, line = 3.5, las = 1)
+dev.off()
