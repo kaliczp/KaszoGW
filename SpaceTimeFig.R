@@ -15,7 +15,7 @@ plot(1:nrow(GrowingTable), GrowingTable[,10],
      ylab = "Időbeli különbségek a teljes időszakban")
 grid(nx = NA, ny = NULL)
 for(tti in 1:nrow(GrowingTable)) {
-    lines(c(tti,tti),
+    lines(c(tti,tti), lwd = 2,
           c(GrowingTable[tti,10], FullTable[tti, 10]))
 }
 points(1:nrow(FullTable), FullTable[,10], pch = 21, bg = "#c0504d")
