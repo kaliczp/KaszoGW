@@ -5,9 +5,11 @@ RawTable <- as.data.frame(read_excel("Teszt.xlsx"))
 GrowingTable <- RawTable[3:16,1:10]
 FullTable <- RawTable[21:34,1:10]
 
+par(las = 2)
 plot(1:nrow(GrowingTable), GrowingTable[,10],
      ylim = c(-17,90),
-     xlab = "Talajvízkút-párok",
+     xaxt = "n",
+     xlab = "",
      ylab = "Időbeli különbségek a teljes időszakban")
 grid(nx = NA, ny = NULL)
 for(tti in 1:nrow(GrowingTable)) {
@@ -16,3 +18,6 @@ for(tti in 1:nrow(GrowingTable)) {
 }
 points(1:nrow(FullTable), FullTable[,10], pch = 21, bg = "#c0504d")
 points(1:nrow(GrowingTable), GrowingTable[,10], pch = 21, bg = "#92d050")
+axis(1, at = 1:nrow(GrowingTable),
+     label = paste(GrowingTable[,1], GrowingTable[,2], sep = "-"))
+mtext("Talajvízkút-párok", side = 1, line = 3.5, las = 1)
