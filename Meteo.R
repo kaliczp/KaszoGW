@@ -27,6 +27,7 @@ plot.zoo(hom.xts, type ="n",
          xlab = "", ylab = expression(paste("Napi hőmérséklet [",degree*C,"]")),
          xlim = IdoLim, ylim = c(-11, 35))
 lines(as.zoo(hom.xts), lwd = 2)
+axis(1,as.POSIXct('2016-10-01'),tck = 1, lab = FALSE, col = "red", lwd = 4, lty = 2, lend = 2)
 box()
 dev.off()
 
