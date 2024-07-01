@@ -382,3 +382,23 @@ DE csapadék mentes időszak, ilyen felosztásba valószínűleg nem lenne korre
 választva, és ezekre a boxplotokat, és ezt összehasonlítani.
 Vagy: selection of events. Pl. erősebb csapadékos időszakba – 7nap – nézzük a vízszintet
 Ezeknél a lényeg, hogy ne Idősor szagú legyen a legfelső pontba leírtak miatt.
+
+* <2024-06-04 k>
+Pontok közé vonalat húzni
+
+* <2024-07-01 h>
+12 * 5.3 cm az ábra
+
+Hidrológiai évre a minimum, maximum és átlagos csapadék mennyiség.
+Vegetációs időszakra is! április 1-től, szept 30-ig
+
+ZKK KaszoClimate mappában vannak számolgatások. Azok lennének?
+Excels mappában a nyers fájlok.
+
+Az ábra a Meteo.R-be beimportált KaszoDailyTempPrec.xlsx alapján készült.
+
+Most az évesnek mondott adatok honnan jöttek?
+
+Van a ZKK-ban egy Kaszó.xlsx, amelyben hasonló adatok szerepeltek, mint a cikkben!
+
+A bíráló megjegyzése a 4. ábra körüli szövegre vonatkozik.
