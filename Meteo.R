@@ -7,7 +7,7 @@ hom.xts <- xts(dplyr::pull(raw, 2), dplyr::pull(raw,Date))
 ## Ábrázolás
 IdoLim <- c(as.POSIXct("2014-10-01"), as.POSIXct("2018-10-16"))
 
-pdf("meteo.pdf", width = 12.5/2.54, height = 7/2.54, pointsize = 10)
+pdf("meteo.pdf", width = 12/2.54, height = 5.3/2.54, pointsize = 9)
 par(mar = c(2.1, 3.1, 0.5, 3.1), las = 1, lend = 1)
 plot.zoo(csap.xts, type = "n",
          xaxs = "i", yaxs = "i",
