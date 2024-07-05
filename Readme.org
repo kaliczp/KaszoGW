@@ -402,3 +402,8 @@ Most az évesnek mondott adatok honnan jöttek?
 Van a ZKK-ban egy Kaszó.xlsx, amelyben hasonló adatok szerepeltek, mint a cikkben!
 
 A bíráló megjegyzése a 4. ábra körüli szövegre vonatkozik.
+
+* <2024-07-03 sze>
+Katival néztük. Szöveg a zárójelentésből.
+Kati gépén statisztikak.xlsx fájlban szerepelnek azok a számok.
+Már csak azt kell tudni, hogy a statisztikak, fájl miből lett számolva.
