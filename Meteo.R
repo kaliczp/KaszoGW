@@ -65,3 +65,20 @@ axis(2, c(-10,0,10,20,30))
 mtext(expression(paste("Daily temperature [",degree*C,"]")), side = 2, at = 10, adj = 0.5, line = 2.1, las = 0)
 box()
 dev.off()
+
+## Table
+apply.yearly(csap.xts, mean, na.rm = TRUE)
+apply.yearly(csap.xts, sum, na.rm = TRUE)
+
+sum(csap.xts['2014-10-01/2015-09-30'],na.rm=T)
+sum(csap.xts['2015-10-01/2016-09-30'],na.rm=T)
+sum(csap.xts['2016-10-01/2017-09-30'],na.rm=T)
+sum(csap.xts['2017-10-01/2018-09-30'],na.rm=T)
+
+sum(csap.xts['2014-11-01/2015-10-31'],na.rm=T)
+sum(csap.xts['2015-11-01/2016-10-31'],na.rm=T)
+sum(csap.xts['2016-11-01/2017-10-31'],na.rm=T)
+sum(csap.xts['2017-11-01/2018-10-31'],na.rm=T)
+
+# Kaszó.xlsx-ből: Kaszo fájlban?
+sum(c(806.5,858.1,726.9,1028.4))
